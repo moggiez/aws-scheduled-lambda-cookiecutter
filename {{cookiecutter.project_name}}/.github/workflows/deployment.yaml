@@ -92,5 +92,5 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
           aws-region: eu-west-1
 {% endraw %}
-      - name: Deploy {{cookiecutter.project_name}}-event-driven lambda
+      - name: Deploy {{cookiecutter.project_name}}-scheduled lambda
         run: make update-lambda-fn

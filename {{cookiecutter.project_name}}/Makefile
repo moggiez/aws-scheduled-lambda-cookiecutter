@@ -25,7 +25,7 @@ build-cleanup:
 	rm -rf ./dist/* & mkdir -p dist && rm -rf ./src/node_modules
 
 build: build-cleanup
-	cd src && npm i --only=prod && zip -r ../dist/{{cookiecutter.project_name}}-event-driven.zip ./
+	cd src && npm i --only=prod && zip -r ../dist/{{cookiecutter.project_name}}-scheduled.zip ./
 
 build-dev: build-cleanup
 	cd src && npm i
@@ -40,7 +40,7 @@ test:
 	npm run test
 
 update-lambda-fn: build
-	aws lambda update-function-code --function-name {{cookiecutter.project_name}}-event-driven --zip-file fileb://$(shell pwd)/dist/{{cookiecutter.project_name}}-event-driven.zip --publish | jq .FunctionArn
+	aws lambda update-function-code --function-name {{cookiecutter.project_name}}-scheduled --zip-file fileb://$(shell pwd)/dist/{{cookiecutter.project_name}}-scheduled.zip --publish | jq .FunctionArn
 
 # NPM COMMANDS
 install:
