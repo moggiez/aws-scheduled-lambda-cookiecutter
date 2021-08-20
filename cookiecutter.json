@@ -1,5 +1,5 @@
 {
-  "project_name": "my-event-driven-lambda",
+  "project_name": "my-scheduled-lambda",
   "domain_name": "moggies.io",
   "aws_region": "eu-west-1"
 }
